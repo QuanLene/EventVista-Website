@@ -1,0 +1,128 @@
+.blog {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .main-content {
+    flex: 2;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-height: 90vh;
+  }
+  
+  .slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .slider-track img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    flex-shrink: 0;
+  }
+  
+  .slider-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #7b6f6f;
+    opacity: 0.4;       /* Làm mờ dot chưa active */
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .slider-dots .dot.active {
+    background: white;
+    opacity: 1;
+  }
+   
+  .sidebar-container {
+    flex: 1;
+    max-height: 75vh;
+    overflow-y: auto;  
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Thiết kế thanh cuộn trong blog */
+  .sidebar-container::-webkit-scrollbar {
+    width: 4px;
+  }
+  .sidebar-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+  }
+  
+  .sidebar-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd; 
+    padding-bottom: 15px; 
+  }
+  
+  .article-text {
+    flex: 1;
+  }
+  
+  .category-heading {
+    font-size: 0.85em;
+    color: #007bff;
+    margin-bottom: 5px;
+    font-weight: 600;
+  }
+  
+  .article-title a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+  }
+  
+  .article-title a:hover {
+    text-decoration: none;
+    color:crimson;
+  }
+  .thumbnail img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  
+@media (max-width: 768px) {
+  .blog {
+    flex-direction: column; 
+    margin: 0 20px;
+  }
+
+  .main-content,
+  .sidebar-container {
+    width: 100%;
+    flex: none;
+  }
+
+  .article-text {
+    padding: 5px 15px;
+  }
+}

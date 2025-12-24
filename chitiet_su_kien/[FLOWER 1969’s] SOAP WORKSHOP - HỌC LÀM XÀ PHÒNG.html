@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG</title>
+    <link rel="stylesheet" href="../css/css_sự_kiện.css">
+    <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+
+<!--Hiệu ứng kí hiệu thời gian, địa điểm,... Chỗ banner, sự kiện liên quan,...-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!--hiệu ứng cho phần thông tin vé chữ + bố cục + hết vé-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- hiệu ứng cho phần thông tin vé mũi tên xoay xuống hiện thông tin-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+</head>
+<body>
+     <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="../city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
+    
+      <div class="dropdown-content" id="cityMenu">
+        <div class="dropdown-region">
+          <strong>MIỀN BẮC</strong>
+          <div class="img-center">
+            <img src="../images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/Ha-noi.html">HA NOI</a></div>
+          </div>
+        <a href="#">Hạ Long</a>
+        <a href="#">Thái Bình</a>
+        <a href="#">Hải Phòng</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN TRUNG</strong>
+          <div class="img-center">
+            <img src="../images/city/Danang.png" alt="Miền Trung" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="#">DA NANG</a></div>
+          </div>
+        <a href="#">Nha Trang</a>
+        <a href="#">Lâm Đồng</a>
+        <a href="#">Huế</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN NAM</strong>
+          <div class="img-center">
+            <img src="../images/city/hcm.png" alt="Miền Nam" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/HCM.html">HO CHI MINH</a></div>
+          </div>
+        <a href="#">Bình Thuận</a>
+        <a href="#">Cần Thơ</a>
+        <a href="#">Phú Quốc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="../city_sukien/sukien.html" class="city-link">SỰ KIỆN</a>
+   
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="../city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="../city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="../city_sukien/thethao.html"> ⚽ Thể thao</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+    <div class="user-dropdown">
+        <div class="user-icon" id="userIcon">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="login" id="userMenu">
+            <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+            <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+</div>
+ 
+<!-- Chi tiết -->
+  <div class="banner_sk">
+    <div class="banner-container">
+      <div class="banner-left">
+        <img src="../images/workshop/[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG/ảnh 1.png" alt="Hình ảnh sự kiện" class="banner-image">
+      </div>
+      <div class="banner-right">
+        <h2 class="event-title">[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG</h2>
+  
+        <div class="event-time">
+          <i class="fa-solid fa-calendar-days icon"></i>
+          <span><strong>17:30 - 19:00, 10 tháng 05, 2025</strong></span>
+        </div>
+  
+        <div class="event-location">
+          <i class="fa-solid fa-location-dot icon"></i>
+          <div>
+            <strong>Flower 1969’s - The Seat Cafe</strong><br>
+            <span><em> 491/2 Lê Văn Sỹ, Phường 12, Quận 3, Thành Phố Hồ Chí Minh</em></span>
+          </div>
+        </div>
+  
+        <div class="price-section">
+          <hr class="divider">
+          <p class="price" >Giá từ: <strong style="color: aqua;">279.000 đ </strong><i class="fa fa-chevron-right" style="font-size:medium"></i></p> 
+  
+         
+        </div>
+      </div>
+  
+
+    </div>
+  </div>
+  
+
+<div id="gioiThieu" class="Vùng_thông_tin">
+            <div class="featured-events-header">
+                <h2>Giới thiệu</h2>
+              </div>
+              
+              <div class="collapse-wrapper">
+                <div class="collapse-content" id="gioiThieuContent">
+        <h3 style="text-align: center;"> (FLOWER 1969's) SOAP WORKSHOP - HỌC LÀM BÁNH XÀ PHÒNG </h3>
+       <p>
+        Chuyên nghiên cứu độc quyền về mùi hương, Flower 1969's tạo ra Workshop Xà Phòng nhằm mang đến cho khách hàng những trải nghiệm thú vị về hương thuần tự nhiên cũng như những nghiên cứu sáng tạo về độc đáo hương cá nhân qua sở thích, tính cách của Bạn. 
+  <br>      Buổi học hướng dẫn cách làm bánh xà phòng handmade từ những nguyên liệu hoàn toàn thiên nhiên. Bên cạnh đó, cung cấp cho học viên những kiến thức về nguồn gốc, hương thơm, cách lựa chọn Xà phòng phù hợp với làn da, và mang được nét đặc trưng mùi hương theo sở thích. Với hình thức xinh đẹp và đa dạng khuôn, xà phòng Handmade được ưa chuộng bởi vẻ ngoài và chất lượng thiên nhiên.
+  <br>     
+<strong>     * Workshop Xà phòng bột thiên nhiên: Học phí bao gồm 1 phần nước, toàn bộ dụng cụ, Bánh xà phòng 100g mang về.
+</strong> 
+<br> <em>     Flower 1969's organizes Handmade Soap Workshop in order to provide customers interesting experiences about pure essential scents as well as the uniqueness of special scents which fit your personalities, hobbies and interests.
+ <br>       This workshop will teach you how to make handmade soap from natural ingredients. Besides, you also have a chance to access with knowledge about the origin of soap, oil, how to choose the right soap for the skin, and bring the scent that are made by you. With nice shape and great scents, Handmade soap is favored for its natural appearance and quality.
+   </em><br>     
+  <strong>   * Handmade Soap Workshop: Fee including tea, all tools, materials, 100g soap base to take home.
+  </strong><br>   </p>
+  <p>   <strong style="color: red;">          THÔNG TIN WORKSHOP:</strong>  <br> 
+    <strong>                ⚜️Thời gian:</strong>  <br> 
+                    Thứ 7, Chủ nhật hàng tuần (17:30h -19:30h)<br> 
+                <strong>                ⚜️Địa điểm:</strong>  <br> 
+                    The Seat Cafe - 491/2 Lê Văn Sỹ, Phường 12, Quận 3, TP.HCM<br> 
+                <strong>       ⚜️Xem thêm thông tin của Chúng tôi tại:</strong>  <br> 
+                    Bạn cần tư vấn hỗ trợ, trực tiếp liên hệ với nhà tổ chức của chúng tôi <br> 
+                <strong>        ⚜️Facebook/Instagram: Flower 1969's </strong>  <br> 
+            <strong>       ⚜️Hotline:</strong>   0931430627 - 0847137248<br> 
+        <strong>        ⚜️Văn Phòng:</strong>   5C Nguyễn Đình Chiểu, Quận 1, TP.HCM.<br> 
+                    
+    <strong style="color: red;">         WORKSHOP INFORMATION:</strong>  <br> 
+                    
+    <strong>          ⚜️Time:</strong>  <br> 
+                    Every Saturday, Sunday (05:30 Pm - 07:30 Pm)<br> 
+                <strong>                 ⚜️Location:</strong>  <br> 
+                    The Seat Cafe - 491/2 Le Van Sy, Ward 12, District 3, Ho Chi Minh City<br> 
+                <strong>          ⚜️See more of our information at:</strong>  <br> 
+                    If you need advice or support, contact our organizers directly<br> 
+                <strong>       ⚜️ Facebook/Instagram: Flower 1969's</strong>  <br> 
+            <strong>        ⚜️Hotline:</strong>   0931430627 - 0828278243<br> 
+        <strong>        ⚜️  Office:</strong>   5C Nguyen Dinh Chieu, District 1, Ho Chi Minh City.<br> 
+                    
+        <em>           #Flower1969s #Candle #Essentialoil #Handmade #Organic<br> 
+                    
+                    *** Trong điều kiện sự kiện diễn ra bình thường, việc hoàn trả vé và hoàn tiền sẽ do Nhà tổ chức sự kiện quyết định!<br> 
+                    *** Under normal event conditions, ticket returns and refunds will be decided by the Event Organizer!
+                </em>            </p>    
+                   
+            </div>
+          <button class="collapse-toggle" onclick="toggleCollapse()">Xem thêm</button>
+        </div>
+
+              </div>
+  
+
+              <div class="Vùng_thông_tin" id="ticket-info">
+                <div class="featured-events-header" >
+                  <h2>THÔNG TIN VÉ</h2>
+                </div>
+              
+                <!-- NHÓM 1: 09:00 - 10:30 -->
+                <div class="accordion-item mb-3">
+                  <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+                    <span>17:30 - 19:00, 10/05/2025</span>
+                    <button class="btn btn-outline-secondary btn-sm" disabled style="color: aliceblue;">Ngừng đăng ký online</button>
+                  </div>
+              
+                  <div class="accordion" id="group1Accordion">
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group1_ve1">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Vé thường</span>
+                          <span class="ticket-status sold-out">Hết vé</span>
+                        </button>
+                      </h2>
+                      <div id="group1_ve1" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            - Giá vé: 310.000đ
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!--  -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group1_ve2">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Vé ưu đãi</span>
+                          <span class="ticket-status sold-out">Hết vé</span>
+                        </button>
+                      </h2>
+                      <div id="group1_ve2" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                            - Giá áp dụng khi mua từ 04 vé trở lên, ưu đãi 10%
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      <!-- NHÓM 2: 14:30 - 16:00 -->
+      <div class="accordion-item mb-3">
+        <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+          <span>17:30 - 19:00, 17/05/2025</span>
+          <button class="btn btn-outline-secondary btn-sm" disabled style="color: aliceblue;">Ngừng đăng ký online</button>
+        </div>
+    
+        <div class="accordion" id="group2Accordion">
+          <!--  -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group2_ve1">
+                <i class="fa fa-angle-right icon-left me-2"></i>
+                <span class="tên_vé">Vé thường</span>
+                <span class="ticket-price ms-auto">310.000 đ</span>
+              </button>
+            </h2>
+            <div id="group2_ve1" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                  - Giá vé: 310.000đ
+              </div>
+            </div>
+          </div>
+    
+          <!--  -->
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group2_ve2">
+                <i class="fa fa-angle-right icon-left me-2"></i>
+                <span class="tên_vé">Vé ưu đãi</span>
+                <span class="ticket-status sold-out">Hết vé</span>
+              </button>
+            </h2>
+            <div id="group2_ve2" class="accordion-collapse collapse">
+              <div class="accordion-body">
+                  - Giá áp dụng khi mua từ 04 vé trở lên, ưu đãi 10%
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+         <!-- NHÓM 3 -->
+         <div class="accordion-item mb-3">
+            <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+              <span>17:30 - 19:00, 24/05/2025</span>
+             <button class="btn btn-outline-secondary btn-sm" disabled style="color: aliceblue;">Ngừng đăng ký online</button>
+            </div>
+        
+            <div class="accordion" id="group3Accordion">
+              <!--  -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group3_ve1">
+                    <i class="fa fa-angle-right icon-left me-2"></i>
+                    <span class="tên_vé">Vé thường</span>
+                    <span class="ticket-price ms-auto">310.000 đ</span>
+                  </button>
+                </h2>
+                <div id="group3_ve1" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                      - Giá vé: 310.000đ
+                  </div>
+                </div>
+              </div>
+        
+              <!--  -->
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group3_ve2">
+                    <i class="fa fa-angle-right icon-left me-2"></i>
+                    <span class="tên_vé">Vé ưu đãi</span>
+                    <span class="ticket-price ms-auto">279.000 đ</span>
+                  </button>
+                </h2>
+                <div id="group3_ve2" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                      - Giá áp dụng khi mua từ 04 vé trở lên, ưu đãi 10%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+             <!-- NHÓM 4-->
+             <div class="accordion-item mb-3">
+                <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+                  <span>17:30 - 19:00, 31/05/2025</span>
+                  <button class="btn btn-outline-secondary btn-sm" disabled style="color: aliceblue;">Ngừng đăng ký online</button>
+                </div>
+            
+                <div class="accordion" id="group4Accordion">
+                  <!--  -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group4_ve1">
+                        <i class="fa fa-angle-right icon-left me-2"></i>
+                        <span class="tên_vé">Vé thường</span>
+                        <span class="ticket-price ms-auto">310.000 đ</span>
+                      </button>
+                    </h2>
+                    <div id="group4_ve1" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                          - Giá vé: 310.000đ
+                      </div>
+                    </div>
+                  </div>
+            
+                  <!--  -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group4_ve2">
+                        <i class="fa fa-angle-right icon-left me-2"></i>
+                        <span class="tên_vé">Vé ưu đãi</span>
+                        <span class="ticket-price ms-auto">279.000 đ</span>
+                      </button>
+                    </h2>
+                    <div id="group4_ve2" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                          - Giá áp dụng khi mua từ 04 vé trở lên, ưu đãi 10%
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+       
+                        </div>
+      
+                          
+<div class="Vùng_thông_tin">
+  <div class="featured-events-header">
+    <h2>BAN TỔ CHỨC</h2>
+  </div>
+  <div>
+    <div style="display: flex; align-items: center;">
+      <img src="../images/workshop/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM/ban_to_chuc.png" alt="VieON x VieChannel" style="width: 150px; height: auto; margin-right: 30px;">
+      <div>
+        <p style="margin-top: 0; margin-bottom: 5px; font-weight: bold; color: #333;">Flower 1969's</p>
+        <p style="margin-top: 0; margin-bottom: 5px; color: #777; font-size: 0.9em;">Thương hiệu được tạo ra với niềm đam mê bất tận về Hương Thuần Tự Nhiên</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="Vùng_thông_tin">
+  <div class="featured-events-header">
+    <h2>Sự kiện liên quan</h2>
+
+  </div>
+<div class="featured-events">
+    <div class="events-grid">
+  <div class="event-card">
+    <a href="../chitiet_su_kien/ART WORKSHOP THÊU TÚI HOA TRONG LÒNG.html">
+      <div class="event-image">
+        <img src="../images/workshop/ART WORKSHOP THÊU TÚI HOA TRONG LÒNG/ảnh 1.jpg" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>ART WORKSHOP THÊU TÚI "HOA TRONG LÒNG"</h3>
+        <p class="event-price">Từ 350.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 10 tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+  <div class="event-card">
+    <a href="../chitiet_su_kien/[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN.html">
+      <div class="event-image">
+        <img src="../images/workshop/[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN/ảnh 1.png" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN</h3>
+        <p class="event-price">Từ 315.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 10 Tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="event-card">
+    <a href="../chitiet_su_kien/[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE.html">
+      <div class="event-image">
+        <img src="../images/workshop/[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE/eee2272a2dcf2b322207222bfd505318.jpg" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hà Nội</div>
+      </div>
+      <div class="event-details">
+        <h3>[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE</h3>
+        <p class="event-price">Từ 315.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 03 tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="event-card">
+    <a href="../chitiet_su_kien/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM.html">
+      <div class="event-image">
+        <img src="../images/workshop/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM/ảnh1.png" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM</h3>
+        <p class="event-price">Từ 279.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 03 tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+    </div>
+</div>
+</div>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportEventvista@eventvista.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Ban Tổ chức</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho ban tổ chức</a>
+
+      <p><strong>Đăng ký nhận email về các sự kiện hot nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+    <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+    function toggleCollapse() {
+      const wrapper = document.querySelector('.collapse-wrapper');
+      wrapper.classList.toggle('expanded');
+    const isExpanded = wrapper.classList.contains('expanded');
+      const button = wrapper.querySelector('.collapse-toggle');
+      
+      button.textContent = wrapper.classList.contains('expanded') ? "Thu gọn" : "Xem thêm";
+      
+
+  if (!isExpanded) {
+      const section = document.getElementById("gioiThieu");
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    }
+    </script>
+
+<script>
+function toggleAll() {
+  const btn = document.getElementById("toggleAllBtn");
+  const allCollapses = document.querySelectorAll('.accordion-collapse');
+  const anyHidden = [...allCollapses].some(el => !el.classList.contains('show'));
+
+  allCollapses.forEach(el => {
+    const instance = bootstrap.Collapse.getOrCreateInstance(el);
+    anyHidden ? instance.show() : instance.hide();
+  });
+
+  btn.textContent = anyHidden ? "Thu gọn" : "Xem tất cả";
+}
+</script>
+<!--Khi nhấn vào GIÁ TỪ... Máy cuộn xuống Thông tin vé-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceElement = document.querySelector(".price");
+    const ticketInfoSection = document.getElementById("ticket-info");
+
+    if (priceElement && ticketInfoSection) {
+      priceElement.style.cursor = "pointer"; 
+      priceElement.addEventListener("click", function () {
+        ticketInfoSection.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
+</script>
+<!-- Nút Zalo với chữ -->
+<a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
+  Zalo
+</a>
+
+<!-- Nút lên đầu trang -->
+<button id="backToTopBtn" title="Lên đầu trang">
+  <i class="fas fa-home"></i>
+</button>
+
+
+<script src="../js/learn.js"></script>
+</body>
+</html>

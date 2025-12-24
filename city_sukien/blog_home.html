@@ -1,0 +1,468 @@
+<!Doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Home</title>
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</head>
+<style>
+.blog-sidebar {
+     margin-top: 20px; 
+ /*   height: auto;*/
+    position: sticky;
+    top: 100px;
+    z-index: 100;
+}
+
+.sidebar-content {
+    padding: 15px;
+    background-color: #f8f9fa; /* Màu nền xám bạn muốn */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+   /* height: auto; Đảm bảo nó chỉ cao bằng nội dung */
+}
+
+.sidebar-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dc3545; 
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee; /* Đường gạch dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+.sidebar-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #dc3545; 
+    transform: rotate(45deg); /* Xoay để tạo hình máy bay */
+    margin-right: 10px;
+    position: relative;
+    top: -5px; 
+}
+
+.related-posts .post-item {
+    display: flex;
+    margin-bottom: 15px;
+     align-items: center; 
+}
+
+.related-posts .post-item img {
+    width: 80px; 
+    height: 60px; 
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn và không bị méo */
+    margin-right: 10px;
+    border-radius: 3px; /* Bo góc ảnh */
+}
+
+.related-posts .post-item .post-content {
+    flex-grow: 1;
+}
+
+.related-posts .post-item a {
+    font-size: 0.95em;
+    color: #333; 
+    text-decoration: none;
+    line-height: 1.4;
+    display: block; 
+
+}
+
+.related-posts .post-item a:hover {
+    color: #dc3545; 
+    
+    text-decoration: none;
+}
+
+
+#progressWrapper {
+  display: none;
+  position: fixed;
+  top: 0.5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  z-index: 9999;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background-color: #4caf50;
+  position: relative;
+}
+
+#progressIcon {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  transition: left 0.05s linear;
+}
+
+</style>
+<body>
+  <!-- Welcome Section -->
+   <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="#" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="city.html" class="city-link">THÀNH PHỐ</a>
+    
+      <div class="dropdown-content" id="cityMenu">
+        <div class="dropdown-region">
+          <strong>MIỀN BẮC</strong>
+          <div class="img-center">
+            <img src="../images/city/HaNoi.jpg" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/Ha-noi.html">HA NOI</a></div>
+          </div>
+        <a href="#">Hạ Long</a>
+        <a href="#">Thái Bình</a>
+        <a href="#">Hải Phòng</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN TRUNG</strong>
+          <div class="img-center">
+            <img src="../images/city/Danang.png" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="#">DA NANG</a></div>
+          </div>
+        <a href="#">Nha Trang</a>
+        <a href="#">Lâm Đồng</a>
+        <a href="#">Huế</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN NAM</strong>
+          <div class="img-center">
+            <img src="../images/city/HoChiMinh.jpg" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/HCM.html">HO CHI MINH</a></div>
+          </div>
+        <a href="#">Bình Thuận</a>
+        <a href="#">Cần Thơ</a>
+        <a href="#">Phú Quốc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="sukien.html" class="city-link">SỰ KIỆN</a>
+    
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="../city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="../city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="../city_sukien/thethao.html"> ⚽ Thể thao</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+
+<!--nội dung blog-->
+<main>
+
+<div id="progressWrapper">
+  <div id="progressBar">
+    <img src="../images/LOGO_title.png" id="progressIcon" alt="icon" />
+  </div>
+</div>
+
+<div class="container" >
+    <div class="row">
+     
+        <div class="col-12 col-md-9" style="padding-top: 10px ;" >
+<h3 style="color: rgb(28, 88, 133);"> <strong> Chill Thả Ga 30/04 Tại Hà Nội: Tour Đêm Văn Miếu, Rối Nước Hoàng Thành Thăng Long miễn phí </strong></h3>
+<p>
+Cuối tuần này, đặc biệt là khi Đại lễ 30/4 đang đến gần, hàng loạt các sự kiện đổ bộ, tăng điểm "đi chill" cho giới trẻ Hà thành. Tour đêm miễn phí ở Văn Miếu - Quốc Tử Giám, triển lãm ở Bảo tàng Lịch sử Quốc gia... là một trong những điểm đến đáng ghé qua trong dịp cuối tuần này...
+</p> 
+<p>
+<h4><strong> 
+Tour đêm Văn Miếu - Quốc Tử Giám </strong></h4>
+
+Ban ngày, Văn Miếu - Quốc Tử Giám vẫn mở cửa, thu vé như bình thường. Nhưng những ngày gần đây, Văn Miếu - Quốc Tử Giám sẽ  miễn phí vào cửa tour đêm để du khách  trải nghiệm công nghệ và thưởng thức màn trình diễn 3D mapping "Tinh hoa đạo học".
+<br>
+Hiện tour đêm Văn Miếu - Quốc Tử Giám miễn phí mở cửa từ 18h-22h, kéo dài từ 22-27/4. Trong đó, khung giờ trải nghiệm 3D Mapping là 19h45-20h45.
+<br>
+<div class="text-center my-4">
+        <img src="../images/blog/blog_home/ảnh 1.jpg" alt="Image 2" class="img-fluid"></div>
+
+</p>
+
+<p>
+<strong> <h4>
+Chuỗi hoạt động văn hóa ở phố cổ Hà Nội</strong></h4>
+
+Nếu tour đêm ở Văn Miếu bạn "do dự là mất cơ hội", thì chuỗi hoạt động văn hóa ở phố cổ Hà Nội lại ê hề và kéo dài tới hết tháng 5/2025, thoải mái cho các bạn trẻ vi vu.
+<br>
+Chuỗi hoạt động văn hóa nhằm hòa chung không khí kỷ niệm 50 năm Ngày Giải phóng miền Nam, thống nhất đất nước, 139 năm Ngày Quốc tế Lao động, hướng tới kỷ niệm 71 năm chiến thắng Điện Biên Phủ và 135 năm ngày sinh Chủ tịch Hồ Chí Minh; do Ban quản lý hồ Hoàn Kiếm và phố cổ Hà Nội tổ chức.
+<br>
+Tại Trung tâm Thông tin Văn hóa Hồ Gươm có triển lãm ảnh chủ đề "Ký ức và huyền thoại", diễn ra từ ngày 25/4 - 25/5). Ở biệt thự cổ số 46 Hàng Bài - 49 Trần Hưng Đạo sẽ có triển lãm với chủ đề “Khám phá di sản” từ ngày 8/5.
+<br>
+Ở đình Kim Ngân, du khách có thể ghé xem trưng bày nghề mây tre đan chủ đề “Made of Tre” (đến hết 28/4). Tại Trung tâm Giao lưu văn hóa phố cổ Hà Nội sẽ có hoạt động giới thiệu nghề khảm trai Chuyên Mỹ và tổ chức workshop trải nghiệm khảm trai (từ nay đến hết ngày 22/5). Tại Trung tâm Văn hoá nghệ thuật (22 Hàng Buồm) đang diễn ra triển lãm tranh cổ động đến hết ngày 31/5.
+<br>
+Toàn bộ nơi được chọn để tổ chức trưng bày, triển lãm, trải nghiệm đều là các "tọa độ" hot, đã và đang gây sốt với giới trẻ Hà thành. Không chỉ tìm hiểu truyền thống, văn hóa, lịch sử, giới trẻ có thể tiện check-in tại các địa điểm tổ chức. Bên cạnh đó, bạn có thể ghé tới Bảo tàng Hà Nội, Bảo tàng Lịch sử Quốc gia, Di tích Nhà tù Hỏa Lò đều đang có hoạt động, triển lãm đặc biệt nhân dịp kỷ niệm 50 năm Ngày Giải phóng miền Nam.
+<br>
+<div class="text-center my-4">
+        <img src="../images/blog/blog_home/ảnh 2.jpg" alt="Image 2" class="img-fluid"></div>
+</p>
+
+<p><h4>
+<strong>Hoàng Thành Thăng Long</strong></h4>
+
+Trung tâm Bảo tồn di sản Thăng Long - Hà Nội tổ chức triển lãm “Con đường thống nhất” tại di tích Cách mạng Nhà và Hầm D67. Theo thông tin trên trang fanpage của Hoàng Thành Thăng Long, triển lãm sẽ giới thiệu 200 tài liệu, ảnh, gồm 3 chủ đề:
+<br>
+- Chủ đề 1: Quyết định chiến lược của Tổng Hành dinh. <br>
+
+- Chủ đề 2: Một ngày bằng 20 năm. <br>
+
+- Chủ đề 3: Tiến về Sài Gòn. <br>
+
+Triển lãm sẽ mở từ ngày 28/4 đến ngày 31/5. Song song với triển lãm, bảo tàng sẽ miễn phí xem biểu diễn múa rối nước.
+<br>
+<div class="text-center my-4">
+        <img src="../images/blog/blog_home/ảnh 3.jpg" alt="Image 2" class="img-fluid"></div>
+
+Nhân dịp kỷ niệm 50 năm ngày Thống nhất đất nước (30/4) và Quốc tế Lao động (1/5), Khu di sản Hoàng Thành Thăng Long sẽ miễn phí vé tham quan cho người có công với cách mạng và những cựu chiến binh.
+<div class="text-center my-4">
+        <img src="../images/blog/blog_home/ảnh 4.jpg" alt="Image 2" class="img-fluid"></div>
+</p>
+
+        </div>
+         <div class="col-12 col-lg-3 blog-sidebar">
+            <div class="sidebar-content">
+    <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN LIÊN QUAN
+        </h3>
+
+
+
+           <div class="post-item ">
+
+            <img src="../images/blog/blog_home/lq1.jpg" alt="Lễ hội lớn lên cùng truyền thống">
+            <div class="post-content">
+                <a href="https://ticketgo.vn/blog/mien-phi-vao-cua-le-hoi-lon-len-cung-truyen-thong-ngay-31-05-va-01-06-2025">Miễn phí - Lễ hội Lớn lên cùng Truyền thống</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/lq2.jpg" alt="Vở diễn sân khấu đa ngành">
+            <div class="post-content">
+                <a href="#">Vở diễn sân khấu đa ngành "Đường về hư vô"</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/lq3.jpg" alt="Lễ hội bia thủ công">
+            <div class="post-content">
+                <a href="#">Miễn phí - Lễ hội bia thủ công 2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/lq4.jpg" alt="Lễ hội du lịch Hà Nội">
+            <div class="post-content">
+                <a href="#">Lễ hội du lịch Hà Nội 2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/lq5.jpg" alt="FOLD FEST HCMC">
+            <div class="post-content">
+                <a href="#">FOLDFEST HCMC 2025 </a>
+            </div>
+        </div>
+        
+    </div>
+
+            <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN MỚI NHẤT
+        </h3>
+
+        <div class="post-item ">
+            <img src="../images/blog/blog_home/new1.jpg" alt="Lễ hội lớn lên cùng truyền thống">
+            <div class="post-content">
+                <a href="https://ticketgo.vn/blog/trien-lam-quoc-te-nganh-cong-nghiep-che-bien-go-vietnamwood-2025">Triển lãm quốc tế ngành công nghiệp chế biến gỗ 2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new2.jpg" alt="Vở diễn sân khấu đa ngành">
+            <div class="post-content">
+                <a href="#">GARAGESALE x WORKSHOP: "AFTER HOUR" </a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new3.jpg" alt="Lễ hội bia thủ công">
+            <div class="post-content">
+                <a href="#">Tử vi tuần mới 12 cung hoàng đạo tuần</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new4.png" alt="Lễ hội du lịch Hà Nội">
+            <div class="post-content">
+                <a href="#"> TALKSHOW "INTERN - NOT A CONCERN"</a>
+            </div>
+        </div>
+        </div>
+            
+</div>
+    </div>
+    </div>
+</div>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportEventvista@eventvista.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Ban Tổ chức</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho ban tổ chức</a>
+
+      <p><strong>Đăng ký nhận email về các sự kiện hot nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+    <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Nút Zalo với chữ -->
+<a id="zaloBtn" href="https://zalo.me/1234567890" target="_blank" title="Liên hệ Zalo">
+  Zalo
+</a>
+
+<!-- Nút lên đầu trang -->
+<button id="backToTopBtn" title="Lên đầu trang">
+  <i class="fas fa-home"></i>
+</button>
+ <script src="../js/learn.js"></script>
+
+
+
+
+<script>
+  window.addEventListener('scroll', () => {
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressBar = document.getElementById('progressBar');
+    const progressIcon = document.getElementById('progressIcon');
+    const header = document.querySelector('.main-header');
+    const wrapperWidth = progressWrapper.offsetWidth;
+
+    const headerRect = header.getBoundingClientRect();
+
+    // Chỉ hiện thanh nếu header đã hoàn toàn cuộn khỏi màn hình
+    const headerEnd = header.offsetTop + header.offsetHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (headerRect.bottom <= 0) {
+      progressWrapper.style.display = 'block';
+    } else {
+      progressWrapper.style.display = 'none';
+    }
+
+    // Tính lại tiến độ bắt đầu từ sau header
+    const contentHeight = document.documentElement.scrollHeight - headerEnd - window.innerHeight;
+    const scrolled = Math.max(0, scrollTop - headerEnd) / contentHeight * 100;
+
+    // Giới hạn từ 0 → 100%
+    const progressPercent = Math.min(100, Math.max(0, scrolled));
+
+    progressBar.style.width = progressPercent + '%';
+    const iconOffset = (wrapperWidth - progressIcon.offsetWidth) * (progressPercent / 100);
+    progressIcon.style.left = iconOffset + 'px';
+  });
+</script>
+
+</body>    
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành phố</title>
+    <link rel="icon" href="../images/LOGO_title.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/city.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="#" class="city-link">THÀNH PHỐ</a>
+      <div class="dropdown-content" id="cityMenu">
+        <div class="dropdown-region">
+          <strong>MIỀN BẮC</strong>
+          <div class="img-center">
+            <img src="../images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="Ha-noi.html">HA NOI</a></div>
+          </div>
+        <a href="#">Hạ Long</a>
+        <a href="#">Thái Bình</a>
+        <a href="#">Hải Phòng</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN TRUNG</strong>
+          <div class="img-center">
+            <img src="../images/city/Danang.png" alt="Miền Trung" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="#">DA NANG</a></div>
+          </div>
+        <a href="#">Nha Trang</a>
+        <a href="#">Lâm Đồng</a>
+        <a href="#">Huế</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN NAM</strong>
+          <div class="img-center">
+            <img src="../images/city/hcm.png" alt="Miền Nam" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="HCM.html">HO CHI MINH</a></div>
+          </div>
+        <a href="#">Bình Thuận</a>
+        <a href="#">Cần Thơ</a>
+        <a href="#">Phú Quốc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="sukien.html" class="city-link">SỰ KIỆN</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="thethao.html"> ⚽ Thể thao</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+    <div class="user-dropdown">
+        <div class="user-icon" id="userIcon">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="login" id="userMenu">
+            <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+            <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+</div>
+
+<!-- video sự kiện -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline>
+      <source src="../video/video.mp4" type="video/mp4" />
+      Trình duyệt không hỗ trợ video.
+    </video>
+    <div id="video"></div>
+  </div>
+
+<!-- Liệt kê thành phố -->
+<div class="urban">
+  <h1>CÁC ĐIỂM ĐẾN TỔ CHỨC SỰ KIỆN HÀNG ĐẦU</h1>
+  <p>Khám phá những thành phố tiêu biểu tại Việt Nam – những địa điểm lý tưởng để tổ chức sự kiện, hội nghị và lễ hội lớn. <br> Mỗi thành phố mang đến những trải nghiệm độc đáo và tiện nghi hiện đại dành cho tổ chức sự kiện chuyên nghiệp.</p>
+
+  <!-- Hiện mặc định -->
+<div class="city">
+  <div class="city-container">
+    <a href="Ha-noi.html">
+    <div class="city-card">
+      <video src="../video/hanoi.mp4" autoplay muted loop></video>
+      <div class="city-name">Ha Noi</div>
+    </div>
+    </a>
+
+    <div class="city-card">
+      <video src="../video/danang.mp4" autoplay muted loop></video>
+      <div class="city-name">Da Nang</div>
+    </div>
+
+    <a href="HCM.html">
+      <div class="city-card">
+        <video src="../video/hcm.mp4" autoplay muted loop></video>
+        <div class="city-name">Ho Chi Minh</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- Ẩn -->
+   <div class="city-container d-none" id="moreCities">
+      <div class="city-card">
+        <video src="../video/thaibinh.mp4" autoplay muted loop></video>
+        <div class="city-name">Thai Binh</div>
+      </div>
+
+      <div class="city-card">
+        <video src="../video/lamdong.mp4" autoplay muted loop></video>
+        <div class="city-name">Lam Dong</div>
+      </div>
+
+      <div class="city-card">
+        <video src="../video/phuquoc.mp4" autoplay muted loop></video>
+        <div class="city-name">Phu Quoc</div>
+      </div>
+
+      <div class="city-card">
+        <video src="../video/haiphong.mp4" autoplay muted loop></video>
+        <div class="city-name">Hai Phong</div>
+      </div>
+
+      <div class="city-card">
+        <video src="../video/nhatrang.mp4" autoplay muted loop></video>
+        <div class="city-name">Nha Trang</div>
+      </div>
+
+      <div class="city-card">
+        <video src="../video/cantho.mp4" autoplay muted loop></video>
+        <div class="city-name">Can Tho</div>
+      </div>
+  </div>
+</div>
+  <!-- Xem thêm thành phố -->
+  <div class="view-more-container text-center mt-3">
+    <button id="viewMoreBtn" class="btn btn-primary">Xem thêm</button>
+  </div>
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportEventvista@eventvista.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Ban Tổ chức</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho ban tổ chức</a>
+
+      <p><strong>Đăng ký nhận email về các sự kiện hot nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+    <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Nút Zalo với chữ -->
+<a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
+  Zalo
+</a>
+
+<!-- Nút lên đầu trang -->
+<button id="backToTopBtn" title="Lên đầu trang">
+  <i class="fas fa-home"></i>
+</button>
+
+<!-- Xem thêm thành phố -->
+<script>
+  document.getElementById("viewMoreBtn").addEventListener("click", function () {
+    const moreCities = document.getElementById("moreCities");
+    moreCities.classList.remove("d-none");
+    this.style.display = "none"; // Ẩn nút sau khi nhấn
+  });
+</script>
+
+<!-- Hiện chữ lên video -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const text = "Khám phá sự kiện tuyệt vời khắp Việt Nam";
+      const words = text.split(" ");
+      const overlay = document.getElementById("video");
+
+      words.forEach((word, index) => {
+        const span = document.createElement("span");
+        span.className = "word";
+        span.style.animationDelay = `${index * 0.1}s`; // tạo hiệu ứng rơi cách nhau
+        span.textContent = word;
+        overlay.appendChild(span);
+      });
+    });
+  </script>
+<script src="../js/learn.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* Share Story */
+.story {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e6e6e6;
+}
+
+.story h1 {
+  color: #b59e14;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.story p {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.story p span {
+  color: #d00000;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.grid a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.grid img.main-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.grid a:hover img.main-img {
+  transform: scale(1.05);
+}
+
+.insta-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  opacity: 0.85;
+}
+
+/* Partner */
+.section-intro {
+  text-align: center; 
+  padding: 20px; 
+  margin-bottom: 18px; 
+  font-size: 1.1em; 
+  line-height: 1.6; 
+  background-color: #f9f9f9;
+}
+
+.partner-section {
+  background-color: #f8f8f8;
+  overflow: hidden;
+  padding: 10px 0;
+  border-bottom: 1px solid #7b3a3a; 
+}
+
+.partner-item {
+  display: inline-block;
+  width: 180px;
+  margin: 0 20px;
+  text-align: center;
+}
+
+.partner-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.partner-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll-left 20s linear infinite;
+}
+
+.partner-item img {
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Animation dịch chuyển sang trái */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Footer */
+.footer {
+  background-color: #f3f1ee;
+  padding: 30px 40px;
+  color: #222;
+  font-size: 16px;
+}
+
+/* Container chia 3 cột */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 35px;
+}
+
+/* Mỗi cột */
+.footer-column {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Tiêu đề từng phần */
+.footer-column p {
+  margin: 16px 0 10px; 
+}
+
+/* Liên kết */
+.footer-column a {
+  color: #222;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 2px;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #f38383;
+  text-decoration: none;
+}
+
+
+.hotline-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #22c55e; 
+}
+
+/* Đăng ký email */
+.email-subscribe {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 6px 10px;
+  background: white;
+  max-width: 300px;
+}
+
+.email-subscribe input[type="email"] {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.email-subscribe .send-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #333;
+  padding-left: 8px;
+}
+
+.email-icon {
+  margin-right: 6px;
+}
+
+/* Thông báo lỗi email */
+#errorMsg {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Nút Zalo + Lên đầu trang */
+#backToTopBtn,
+#zaloBtn {
+  position: fixed;
+  right: 20px; /* Khoảng cách bên phải */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  text-align: center;
+  display: none; /* Mặc định ẩn */
+  font-weight: bold;
+  color: white;
+  font-size: 14px; /* Điều chỉnh kích thước chữ */
+  line-height: 40px; /* Căn giữa chữ */
+  background-color: #0078ff; /* Màu nền cho nút Zalo */
+}
+
+/* Nút lên đầu trang */
+#backToTopBtn {
+  bottom: 20px;
+  background-color: #827777;
+  color: white;
+  border: none;
+  font-size: 18px;
+  display: none;
+  text-align: center;
+  line-height: 40px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#backToTopBtn:hover {
+  background-color: #f7a1a1;
+  transform: scale(1.1);
+}
+
+/* Nút Zalo */
+#zaloBtn {
+  bottom: 70px; 
+  background-color: #0078ff; /* Màu xanh Zalo */
+  text-decoration: none;
+}
+
+#zaloBtn:hover {
+  background-color: #005bb5;
+  text-decoration: none;
+    transform: scale(1.1);
+}
+
+  /* Responsive */
+  @media (max-width: 768px) {
+  .grid a.full-width {
+    grid-column: 1 / -1; /* Ảnh thứ 3 chiếm toàn bộ cột */
+  }
+}

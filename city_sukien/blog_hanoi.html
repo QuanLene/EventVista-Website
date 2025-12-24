@@ -1,0 +1,620 @@
+<!Doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Hà Nội</title>
+    <link rel="icon" href="../images/LOGO_title.png" type="image/x-icon">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Font viết tay mềm mại -->
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    .image-container {
+  position: relative;
+  width: 100%;
+  height: 80vh; /* hoặc 100vh nếu muốn full màn hình */
+  overflow: hidden;
+    }
+
+    .image-container img {
+    position: absolute;
+    /*top: 0;
+    left: 0;*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giúp ảnh lấp đầy khung mà không méo */
+    /*z-index: 1;*/
+    }
+    .overlay-text {
+      position: absolute;
+      top: 70%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 64px;
+      font-family: 'Dancing Script', cursive;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
+      pointer-events: none;
+    }
+main{
+  max-width:1200px; 
+   margin: 0 auto; 
+}
+.content {
+
+  text-align: justify;
+}
+.content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+.blog-sidebar {
+    margin-top: 20px; 
+    height: auto; /* Đảm bảo không có chiều cao cố định */
+}
+
+/* Áp dụng các style màu nền và padding cho div mới */
+.sidebar-content {
+    padding: 15px;
+    background-color: #f8f9fa; /* Màu nền xám bạn muốn */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: auto; /* Đảm bảo nó chỉ cao bằng nội dung */
+}
+
+.sidebar-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #dc3545; /* Màu đỏ cho tiêu đề, giống biểu tượng máy bay giấy */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #eee; /* Đường gạch dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+.sidebar-icon {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 15px solid #dc3545; 
+    transform: rotate(45deg); /* Xoay để tạo hình máy bay */
+    margin-right: 10px;
+    position: relative;
+    top: -5px; 
+}
+
+.related-posts .post-item {
+    display: flex;
+    margin-bottom: 15px;
+     align-items: center; 
+}
+
+.related-posts .post-item img {
+    width: 80px; 
+    height: 60px; 
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn và không bị méo */
+    margin-right: 10px;
+    border-radius: 3px; /* Bo góc ảnh */
+}
+
+.related-posts .post-item .post-content {
+    flex-grow: 1;
+}
+
+.related-posts .post-item a {
+    font-size: 0.95em;
+    color: #333; 
+    text-decoration: none;
+    line-height: 1.4;
+    display: block; /* Đảm bảo liên kết chiếm toàn bộ chiều rộng */
+}
+
+.related-posts .post-item a:hover {
+    color: #dc3545; 
+    
+    text-decoration: none;
+}
+ /*#progressBar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 5px;
+      background-color: #dc3545;
+      width: 0%;
+      z-index: 10000;
+      transition: width 0.1s ease-out;
+    }*/
+    #progressWrapper {
+      display: none;
+  position: fixed;
+  top: 0.5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: #eee;
+  z-index: 9999;
+    }
+
+    #progressBar {
+      height: 100%;
+      width: 0%;
+      background-color: #4caf50;
+      position: relative;
+    }
+
+    #progressIcon {
+      position: absolute;
+      top: -4px; /* Canh icon cao hơn thanh 1 chút */
+      left: 0;
+      width: 20px;
+      height: 20px;
+      transition: left 0.05s linear;
+    }
+/* ====================== MOBILE (max-width: 768px) ====================== */
+/* MOBILE */
+@media (max-width: 768px) {
+   .overlay-text {
+    font-size: 36px;
+    top: 60%;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-sidebar {
+    order: 2;
+  }
+  .content {
+    order: 1;
+  }
+}
+/* TABLET */
+@media (min-width: 769px) and (max-width: 1024px) {
+  main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .related-posts .post-item a {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Số dòng tối đa */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1em;
+  line-height: 1.4em;
+  max-height: 2.8em; /* 1.4 * 2 */
+}
+}
+
+@media (min-width: 1025px) {
+  .content {
+    padding: 30px;
+  }
+  .content h2,
+  .content h3 {
+    font-size: 1.6em;
+  }
+  .related-posts .post-item img {
+    width: 80px;
+    height: 60px;
+  }
+  .sidebar-content {
+    padding: 15px;
+  }
+}
+  </style>
+  
+</head>
+<body>
+  <!-- Welcome Section -->
+   <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="#" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="city.html" class="city-link">THÀNH PHỐ</a>
+      <div class="dropdown-content" id="cityMenu">
+        <div class="dropdown-region">
+          <strong>MIỀN BẮC</strong>
+          <div class="img-center">
+            <img src="../images/city/HaNoi.jpg" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/Ha-noi.html">HA NOI</a></div>
+          </div>
+        <a href="#">Hạ Long</a>
+        <a href="#">Thái Bình</a>
+        <a href="#">Hải Phòng</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN TRUNG</strong>
+          <div class="img-center">
+            <img src="../images/city/Danang.png" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="#">DA NANG</a></div>
+          </div>
+        <a href="#">Nha Trang</a>
+        <a href="#">Lâm Đồng</a>
+        <a href="#">Huế</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN NAM</strong>
+          <div class="img-center">
+            <img src="../images/city/HoChiMinh.jpg" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/HCM.html">HO CHI MINH</a></div>
+          </div>
+        <a href="#">Bình Thuận</a>
+        <a href="#">Cần Thơ</a>
+        <a href="#">Phú Quốc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="sukien.html" class="city-link">SỰ KIỆN</a>
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="../city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="../city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="../city_sukien/thethao.html"> ⚽ Thể thao</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+  <div class="user-dropdown">
+    <div class="user-icon" id="userIcon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="login" id="userMenu">
+        <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+        <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+    </div>
+</div>
+</header>
+</div>
+
+<div class="image-container">
+    <img src="../images/city/HaNoi.jpg" alt="ảnh nền">
+    <div class="overlay-text">Những di tích lịch sử biểu tượng của Hà Nội</div>
+</div>
+<!--nội dung blog
+<div id="progressContainer">
+  <div id="progressBarFill"></div>
+  <img src="../images/LOGO_title.png" id="progressIcon" alt="icon">
+</div>-->
+
+
+<main>
+<div id="progressWrapper">
+  <div id="progressBar">
+    <img src="../images/LOGO_title.png" id="progressIcon" alt="icon" />
+  </div>
+</div>
+
+  <div class="row">
+<!--<div class="content">-->
+  <div class="col-12 col-md-9 content" style="padding-top:10px;">
+<p style="font-style: italic;">Hà Nội – thủ đô ngàn năm văn hiến, không chỉ là trung tâm chính trị, kinh tế, văn hóa của Việt Nam
+     mà còn là kho tàng lịch sử với nhiều di tích cổ kính và giàu giá trị văn hóa. 
+     Những di tích lịch sử Hà Nội là những chứng nhân của thời gian, phản ánh những giai đoạn thăng trầm và những câu chuyện hào hùng của dân tộc. 
+</p>
+
+<h2 style="color:rgb(28,88,133);"><strong>Danh sách những di tích lịch sử Hà Nội</strong></h2>
+<h3><strong>Hoàng thành Thăng Long </strong></h3>
+<p><strong>Hoàng Thành Thăng Long</strong> là khu <strong>di tích lịch sử Hà Nội</strong> được xây dựng từ thế kỷ thứ VII, 
+    dưới triều đại Đinh-Tiền Lê sau đó phát triển mạnh ở thời Lý, Trần, Lê và triều Nguyễn. 
+    Đây là quần thể công trình kiến trúc đồ sộ và là di tích quan trọng bậc nhất trong hệ thống các di tích Việt Nam. 
+    Hoàng Thành Thăng Long đã trải qua nhiều biến cố lịch sử và trở thành một phần không thể thiếu của lịch sử dân tộc
+</p>
+<img src="../images/blog/HoanhThanh.jpg" alt="ảnh hoàng thành">
+<p>Hoàng Thành Thăng Long có diện tích rộng lớn, bao gồm nhiều công trình kiến trúc độc đáo như Cột cờ Hà Nội, Điện Kính Thiên, Đoan Môn và Hậu Lâu. 
+    Mỗi công trình đều mang trong mình những giá trị văn hóa và lịch sử đặc biệt, phản ánh sự phát triển của nghệ thuật kiến trúc và văn hóa Việt Nam qua các thời kỳ.</p>
+<p>Hoàng Thành Thăng Long đã được UNESCO công nhận là di sản văn hóa của thế giới. 
+    Là nơi ghi dấu rất nhiều những sự kiện lịch sử quan trọng của dân tộc. 
+    Đối với những người yêu giá trị văn hóa truyền thống, đây là địa điểm vô cùng thú vị để khám phá, tìm tòi những minh chứng chân thực và sống động nhất. 
+    Không chỉ thế, với khung cảnh đẹp và giàu giá trị nhân văn, mỗi ngày tại khu di tích này còn đón rất nhiều các bạn học sinh, sinh viên tới chụp ảnh kỷ yếu trước khi ra trường hay tham quan để học hỏi thêm các kiến thực về lịch sử dân tộc.</p>
+
+<h3>Văn Miếu – Quốc Tử Giám</h3>
+<p>Văn Miếu – Quốc Tử Giám là một trong những địa điểm du lịch nổi tiếng của Hà Nội thu hút rất nhiều du khách trong và nước. 
+    Nếu nói đây cũng là biểu tượng của Hà Nội thì quả thật không sai.</p>
+<img src="../images/blog/VanMieu.jpg" alt="ảnh văn miếu">
+<p>
+    <strong>Văn Miếu</strong> được xây dựng vào năm 1070 (đời vua Lý Thánh Tông) là nơi thờ các thánh hiền đạo nho. Năm 1076, 
+    Lý Nhân Tông lập thêm <strong>Quốc Tử Giám</strong> ở phía sau, ban đầu là nơi học của các hoàng tử, 
+    sau mở rộng thu nhận cả những học trò giỏi trong thiên hạ. Văn Miếu là nơi thờ Khổng Tử và các bậc hiền triết, trong khi Quốc Tử Giám là trường đại học đầu tiên của Việt Nam, nơi đào tạo nhiều nhân tài cho đất nước.
+</p>
+<p>Quần thể kiến trúc nơi đây bao gồm: hồ Văn, khu <strong>Văn Miếu – Quốc Tử Giám</strong> và vườn Giám. 
+Trong đó, kiến trúc chủ thể là <strong>Văn Miếu và Quốc Tử Giám</strong>. 
+Với hơn 700 năm hoạt động, đã đào tạo hàng nghìn nhân tài cho đất nước, Quốc Tử Giám được coi như là trường đại học đầu tiên của Việt Nam và cũng là biểu tượng cho nền khoa cử thời phong kiến. 
+Mỗi bia Tiến sĩ là một tấm bia đá khắc tên các Tiến sĩ đỗ đạt qua các kỳ thi Đình, thể hiện sự tôn vinh và ghi nhận công lao của những người có công trong học vấn và quản lý đất nước.
+</p>
+<p>Hằng năm, vào những mùa thi cử, các sĩ tử từ khắp nơi đổ về di tích lịch sử ở Hà Nội này để sờ đầu rùa, thắp hương và cầu cho đường học hành thuận lợi, thi cử đỗ đạt. 
+    Đặc biệt, vào Rằm Nguyên Tiêu, tại Văn Miếu thường diễn ra ngày hội Thơ Việt Nam vô cùng trang trọng trong không khí sắc xuân tràn đầy.</p>
+<h3>Chùa Một Cột</h3>
+<P>Tọa lạc tại phố <strong>Chùa Một Cột</strong>, Đội Cấn, quận Ba Đình, Hà Nội. 
+Chùa Một Cột từ lâu đã trở thành biểu tượng của văn hóa Việt Nam. 
+Tương truyền, ngôi chùa này được xây dựng dựa trên “giấc mộng Quan Âm” của vua Lý Thái Tổ. 
+Chùa chỉ có một gian được đặt trên một trụ giữa hồ sen. 
+Điểm nhấn của ngôi chùa nằm ở họa tiết và kiến trúc độc đáo trông như một bông sen trên mặt nước, dân gian quen gọi là <strong>chùa Một Cột</strong>.
+</P>
+<img src="../images/blog/ChuaMotCot.jpg" alt="anhr chùa một cột">
+<p>Trải qua những năm tháng chiến tranh trường kỳ, ngôi chùa này đã bị hư hại rất nhiều. 
+Năm 1955, chùa được phục dựng dựa trên kiến trúc cổ vốn có và tồn tại cho đến ngày nay. 
+Chùa Một Cột có kiến trúc độc đáo với ngôi chùa nhỏ nằm trên một cột đá, biểu tượng của bông sen nở giữa hồ nước. 
+Đây là một trong những công trình kiến trúc Phật giáo độc đáo nhất của Việt Nam, thể hiện sự giao hòa giữa kiến trúc và thiên nhiên, và mang đậm nét văn hóa tâm linh của người Việt. </p>
+<p>Chùa Một Cột là điểm đến tâm linh quan trọng của Hà Nội. 
+Du khách đến đây không chỉ để chiêm ngưỡng kiến trúc độc đáo mà còn để cầu mong bình an, may mắn và sức khỏe. 
+Chùa Một Cột cũng là một trong những địa điểm được nhiều du khách quốc tế yêu thích khi đến thăm Hà Nội.</p>
+<h3>Hồ Hoàn Kiếm và Đền Ngọc Sơn</h3>
+<P><strong>Hồ Hoàn Kiếm và Đền Ngọc Sơn</strong> nằm ngay trung tâm của Thủ Đô Hà Nội. Đây luôn là địa điểm nằm trong danh sách những danh lam thắng cảnh 
+    và di tích lịch sử Hà Nội mà du khách không thể bỏ qua.</P>
+<img src="../images/blog/HoGuom.jpg" alt="ảnh hồ gươm">
+<p>Hồ Hoàn Kiếm trước đây có tên gọi là hồ Lục Thủy hay hồ Thủy Quân. Bởi đây từng là nơi vua dùng để huấn luyện thủy binh chiến đấu. 
+    Tuy nhiên, đến thế kỷ XV, hồ đã được đổi tên thành Hồ Gươm, vì gắn liền với sự tích vua Lê Lợi trả gươm báu cho Rùa vàng. 
+    Quần thể hồ còn có <strong>tháp Bút, đài Nghiên, cầu Thê Húc và đền Ngọc Sơn</strong>.
+</p>
+<img src="../images/blog/DenNgocSon.jpg" alt="ảnh đền ngọc sơn">
+<p>Hiện tại, <strong>Hồ Hoàn Kiếm</strong> là nơi để mọi người thư giãn, đi dạo, hóng mát và nơi sinh hoạt văn hóa của người dân địa phương. 
+    Đây cũng là địa điểm được giới trẻ yêu thích vào mỗi cuối tuần khi tuyến phố đi bộ diễn ra (từ thứ Sáu tới Chủ nhật hàng tuần).</p>
+<h3>Lăng Chủ tịch Hồ Chí Minh</h3>
+<P><strong>Lăng Chủ tịch Hồ Chí Minh</strong> (hay Lăng Hồ Chủ tịch, Lăng Bác) là nơi gìn giữ thi hài <strong>Chủ tịch Hồ Chí Minh</strong>. 
+    Lăng được chính thức khởi công ngày 2/9/1973 và được khánh thành vào ngày 29/8/1975, tại vị trí của lễ đài cũ giữa Quảng trường Ba Đình, 
+    nơi Bác Hồ từng chủ trì các cuộc gặp gỡ.</P>
+<img src="../images/blog/LangBac.jpg" alt="ảnh lăng bác">
+<p>Việc xây dựng Lăng được thực hiện với sự hỗ trợ của các chuyên gia và kỹ sư từ Liên Xô cũ (Nga ngày nay). 
+    Dự án gặp nhiều khó khăn trong việc vận chuyển vật liệu và điều kiện thời tiết, nhưng cuối cùng đã được hoàn thành đúng thời hạn.
+Nội thất của Lăng Chủ Tịch Hồ Chí Minh được thiết kế để tôn vinh sự đơn giản và trang nghiêm. 
+Các bức tường được làm từ đá granit và các yếu tố trang trí khác được thực hiện một cách tinh tế, giữ cho không gian trong lăng luôn trang trọng và đầy tôn nghiêm. 
+
+</p>
+<p>Lăng Chủ Tịch Hồ Chí Minh không chỉ là nơi lưu giữ thi hài của vị lãnh tụ mà còn là địa điểm để tưởng niệm và tri ân những đóng góp của ông cho dân tộc. 
+Nơi đây thu hút hàng triệu du khách mỗi năm, không chỉ từ Việt Nam mà còn từ quốc tế. 
+Việc thăm lăng không chỉ là một hoạt động du lịch mà còn là dịp để thể hiện lòng kính trọng và tưởng nhớ.</p>
+<p>Đặc biệt, nếu ngày 19/5, 2/9 và Mồng 1 Tết Nguyên án trùng vào Thứ Hai hoặc Thứ Sáu, vẫn tổ chức lễ viếng Chủ tịch Hồ Chí Minh. 
+    Khách viếng thăm buộc phải tuân theo những yêu cầu như ăn mặc chỉnh tề, giữ trật tự và không đem các thiết bị điện tử ghi hình khi viếng thăm Lăng Bác.</p>
+<h3>Nhà tù Hỏa Lò</h3>
+<P>Được xây dựng vào cuối thế kỷ 19 và hoạt động từ thời Pháp thuộc cho đến sau khi Việt Nam giành độc lập, nhà tù Hỏa Lò đã chứng kiến nhiều giai đoạn lịch sử và là nơi giam giữ các tù nhân chính trị và chiến sĩ yêu nước. Hiện nay, nhà tù Hỏa Lò là một điểm tham quan lịch sử quan trọng, thu hút nhiều du khách và là nơi ghi nhớ những đau thương, mất mát trong quá khứ.</P>
+<img src="../images/blog/HoaLo.jpg" alt="ảnh hỏa lò">
+<p>Nhà tù được thiết kế theo kiểu kiến trúc Pháp thuộc với các tường bao dày, cổng sắt chắc chắn và nhiều phòng giam nhỏ. 
+    Công trình bao gồm ba khu chính: khu giam giữ tù nhân chính trị, khu giam giữ tù nhân hình sự, và khu quản lý. 
+    Các phòng giam thường được thiết kế kín đáo, thiếu ánh sáng và không thông gió. </p>
+<p>Nhà tù Hỏa Lò ngày nay đã trở thành một di tích lịch sử Hà Nội quan trọng và là điểm đến du lịch phổ biến tại Hà Nội. 
+    Ngoài ra, đây còn là một địa điểm du lịch hấp dẫn mà còn là nơi giáo dục về lịch sử và di sản văn hóa của Việt Nam. </p>
+<h3>Nhà thờ lớn Hà Nội</h3>
+<P>Nhà thờ Lớn Hà Nội, chính thức được gọi là Nhà thờ Chính tòa Thánh Giuse, là một trong những công trình kiến trúc nổi bật và biểu tượng văn hóa của thủ đô Hà Nội.
+     Được xây dựng vào cuối thế kỷ 19, nhà thờ không chỉ là một địa điểm tôn giáo quan trọng 
+     mà còn là một điểm đến thu hút du khách với vẻ đẹp kiến trúc và lịch sử phong phú.</P>
+<p>Công trình được thiết kế bởi kiến trúc sư người Pháp, Bourard, và mang đậm phong cách kiến trúc Gothic của châu Âu, 
+    với các yếu tố như mái vòm nhọn, cửa sổ hình vòm và các trụ cột cao lớn. Đây là nhà thờ đầu tiên được xây dựng tại Hà Nội
+     và là nơi hành lễ của cộng đồng Công giáo.</p>
+<img src="../images/blog/NhaThoLon.jpg" alt="ảnh nhà thờ lớn">
+<p>Nhà thờ Lớn Hà Nội không chỉ là trung tâm tôn giáo của cộng đồng Công giáo mà còn là một biểu tượng văn hóa quan trọng của Hà Nội. 
+    Nhà thờ thường xuyên tổ chức các lễ nghi tôn giáo, bao gồm các buổi lễ Thánh lễ, các nghi thức đặc biệt và các sự kiện cộng đồng.
+Ngoài ra, nhà thờ cũng là một điểm đến du lịch hấp dẫn, thu hút nhiều du khách trong và ngoài nước. Với vẻ đẹp kiến trúc ấn tượng và không gian yên tĩnh, 
+nhà thờ là nơi lý tưởng để tìm hiểu về lịch sử và văn hóa của Hà Nội.</p>
+</div>
+<!--</div>
+<div class="ad">-->
+  <div class="col-12 col-md-3 blog-sidebar">
+            <div class="sidebar-content">
+    <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN LIÊN QUAN
+        </h3>
+        <div class="post-item">
+            <img src="../images/blog/amthuchanoi.jpg" alt="ẩm thực hà nội">
+            <div class="post-content">
+                <a>Hương vị Hà Nội xưa: Đặc sản và câu chuyện đằng sau</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hanoi5.jpg" alt="làng nghề">
+            <div class="post-content">
+                <a href="#">Sắc màu nghề truyền thống: Chuyện kể từ làng nghề Hà Nội</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hn1.jpg" alt="phố cổ">
+            <div class="post-content">
+                <a href="#">Khám phá góc phố cổ: Nơi thời gian ngừng lại ở Hà Nội</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/hanoivedem.jpg" alt="ban đêm hà nộinội">
+            <div class="post-content">
+                <a href="#">Hà Nội về đêm: Ánh đèn, huyền thoại và những điều chưa kể</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/Kientrucphap.jpg" alt="kiến trúc pháp">
+            <div class="post-content">
+                <a href="#">Kiến trúc Pháp cổ tại Hà Nội: Dấu ấn thời gian trên từng viên gạch</a>
+            </div>
+        </div>
+        </div>
+
+            <div class="related-posts">
+        <h3 class="sidebar-title">
+            <span class="sidebar-icon"></span> TIN MỚI NHẤT
+        </h3>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new1.jpg" alt="Lễ hội lớn lên cùng truyền thống">
+            <div class="post-content">
+                <a href="https://ticketgo.vn/blog/trien-lam-quoc-te-nganh-cong-nghiep-che-bien-go-vietnamwood-2025">Triển lãm quốc tế ngành công nghiệp chế biến gỗ - VietnamWood 2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new2.jpg" alt="Vở diễn sân khấu đa ngành">
+            <div class="post-content">
+                <a href="#">GARAGESALE x WORKSHOP: "CHƠI CHUNG: AFTER HOUR" VOL.1</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new3.jpg" alt="Lễ hội bia thủ công">
+            <div class="post-content">
+                <a href="#">Tử vi tuần mới 12 cung hoàng đạo tuần từ 26/05 đến 01/06/2025</a>
+            </div>
+        </div>
+        <div class="post-item">
+            <img src="../images/blog/blog_home/new4.png" alt="Lễ hội du lịch Hà Nội">
+            <div class="post-content">
+                <a href="#">THÔNG BÁO MỞ ĐƠN ĐĂNG KÝ THAM GIA TALKSHOW "INTERN - NOT A CONCERN"</a>
+            </div>
+        </div>
+        </div>
+</div>
+    </div>
+<!--</div>-->
+</div>
+</main>
+
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportEventvista@eventvista.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+    <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Ban Tổ chức</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho ban tổ chức</a>
+
+      <p><strong>Đăng ký nhận email về các sự kiện hot nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+    <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- Nút Zalo với chữ -->
+<a id="zaloBtn" href="https://zalo.me/1234567890" target="_blank" title="Liên hệ Zalo">
+  Zalo
+</a>
+
+<!-- Nút lên đầu trang -->
+<button id="backToTopBtn" title="Lên đầu trang">
+  <i class="fas fa-home"></i>
+</button>
+ <script src="../js/learn.js"></script>
+ <script>
+  window.addEventListener('scroll', () => {
+    const progressWrapper = document.getElementById('progressWrapper');
+    const progressBar = document.getElementById('progressBar');
+    const progressIcon = document.getElementById('progressIcon');
+    const header = document.querySelector('.main-header');
+    const wrapperWidth = progressWrapper.offsetWidth;
+
+    const headerRect = header.getBoundingClientRect();
+
+    // Chỉ hiện thanh nếu header đã hoàn toàn cuộn khỏi màn hình
+    const headerEnd = header.offsetTop + header.offsetHeight;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (headerRect.bottom <= 0) {
+      progressWrapper.style.display = 'block';
+    } else {
+      progressWrapper.style.display = 'none';
+    }
+
+    // Tính lại tiến độ bắt đầu từ sau header
+    const contentHeight = document.documentElement.scrollHeight - headerEnd - window.innerHeight;
+    const scrolled = Math.max(0, scrollTop - headerEnd) / contentHeight * 100;
+
+    // Giới hạn từ 0 → 100%
+    const progressPercent = Math.min(100, Math.max(0, scrolled));
+
+    progressBar.style.width = progressPercent + '%';
+    const iconOffset = (wrapperWidth - progressIcon.offsetWidth) * (progressPercent / 100);
+    progressIcon.style.left = iconOffset + 'px';
+  });
+</script>
+
+
+</body>    
+</html>

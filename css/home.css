@@ -1,0 +1,515 @@
+/* Trang Chủ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+.navbar_1 {
+  background: #62a3ce;
+  padding: 5px 5px;
+  margin: 0 auto;
+  box-shadow: 0 4px 6px rgba(219, 82, 82, 0.648);
+}
+
+.navbar_1 a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0;
+}
+
+.navbar-inner {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-left: 40px;
+padding-right: 40px;
+width: 100%;
+}
+
+/* Text hiệu ứng chớp */
+.welcome-text {
+font-size: 15px;
+font-weight: bold;
+animation: blink 1s infinite; /* Hiệu ứng chớp */
+}
+
+@keyframes blink {
+  0% { opacity: 1; } 
+  50% { opacity: 0; } 
+  100% { opacity: 1; } 
+}
+
+.contact {
+  display: flex;
+  gap: 10px;
+}
+  
+.contact-item {
+  background-color: #d9de3f;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 4px rgba(151, 33, 33, 0.1);
+  transition: background-color 0.3s;
+}
+  
+.contact-item:hover {
+  background-color: #108282;
+}
+
+/* Style cho navigation chính */
+.navigation {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(212, 80, 80, 0.1);
+}
+
+.main-header {
+  padding: 20px 15px;
+  display: flex;
+  align-items: center; /* Căn giữa các phần tử con theo chiều dọc */
+  justify-content: space-between; /* Phân bố khoảng trắng giữa logo, nav và actions */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative; /* Để định vị tuyệt đối cho user-icon nếu cần */
+}
+
+/* Style cho logo */
+.logo img {
+  max-height: 60px;
+  height: auto;
+  width: auto;
+  display: block;
+}
+
+.hamburger {
+  display: none;
+}
+
+.main-nav {
+  display: flex;
+  gap: 60px; 
+  align-items: center; 
+  margin-left: 35px;
+}
+
+.main-nav a {
+  color: #041153;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  padding: 10px 0;
+  text-shadow: 1px 1px 2px #e8a599 ;
+}
+
+.main-nav a:hover {
+  text-decoration: none;
+  color: #d65643;
+}
+
+nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content:center; 
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fdd835;
+  text-decoration: none;
+}
+
+/* Dropdown Thành phố/ Sự kiện */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none; 
+  position: absolute;
+  top: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 10px 15px;
+  flex-direction: row; /* Các miền xếp ngang */
+  gap: 20px;
+  white-space: nowrap;
+  width: max-content;
+}
+
+/* Chỉ áp dụng hover ở màn hình lớn (desktop) */
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: flex;
+  }
+}
+
+.dropdown-region {
+  display: flex;
+  flex-direction: column; 
+  padding-left: 10px;
+  min-width: 150px; 
+}
+
+.dropdown-region a {
+  text-align: left;
+  text-decoration: none;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px #bdabac ;
+}
+
+.img-center {
+  position: relative;
+  width: 100%;     
+  max-width: 150px; 
+  margin: 5px auto;
+}
+
+
+.img-center img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 5px;      
+  left: 50%;         
+  transform: translateX(-50%); 
+  width: 100%;      
+  text-align: center; 
+}
+
+.image-text a {
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-decoration: none; 
+}
+
+.image-text a:hover {
+  color: rgb(44, 183, 65); 
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%; 
+  background: linear-gradient(to top, rgba(240, 5, 5, 0.5), transparent);
+}
+
+/* Style cho khu vực hành động người dùng (Đăng nhập/Đăng ký) */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.search-input-container {
+  display: flex;
+  border: 1px solid #041153;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  width: 220px;
+  height: 32px;
+}
+
+.search-input-container input {
+  border: none;
+  padding: 6px 8px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.search-input-container button {
+  background-color: #041153;
+  border: none;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.search-input-container i {
+  font-size: 14px;
+  color: white;
+}
+
+ /* Sign in/ Sign out */
+.user-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style cho icon người dùng */
+.user-icon {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: rgba(139, 133, 133, 0.2);
+  font-size: 1.2em;
+  margin-left: 10px; 
+}
+
+.login {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    display: none; /* Ẩn form mặc định */
+    padding: 10px;
+    min-width: 160px; 
+    text-align: left;
+}
+
+.login a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.login a:hover {
+  background-color: #f5f5f5;
+  text-decoration: none;
+}
+
+/* Ảnh đại diện sau khi đăng nhập */
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* Background chạy */
+#demo {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+/* Ảnh trong carousel full chiều rộng và chiều cao tự động */
+.carousel-item img {
+  width: 100%;
+  height: auto; 
+  object-fit: cover;
+}
+
+/* Caption giữ nguyên */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(128, 128, 128, 0.6);
+  border-radius: 12px;
+}
+
+/* Giới thiệu */
+.vietnam-section {
+  width: 100%;
+  height: auto;
+  padding: 40px 60px; 
+  text-align: center;  
+  background-image: url(../images/story/story5.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box; 
+}
+
+.section-title {
+  font-size: 2em;
+  color: #a87b00;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.section-subtitle,
+.section-text {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.section-conclusion {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 30px 0 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.filter-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 25px;
+  border: 2px solid #a40000;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #a40000;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none; 
+}
+
+.filter-btn:hover,
+.filter-btn:active {
+  background-color: #a40000;
+  color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    display: flex;
+    flex-wrap: wrap; 
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    flex: 60%;
+    max-height: 60px;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 25px;
+  }
+
+  /* Ẩn menu chính khi thu nhỏ */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;              
+    right: 15px;           
+    width: 220px;       
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 9999;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .main-nav a {
+    font-size: 15px;        
+  }
+
+  
+  /* Dropdown Thành phố */
+  .dropdown {
+    padding: 5px;
+  }
+
+
+  .dropdown-region {
+    min-width: unset;
+    width: 100%;
+    text-align: center;
+  }
+
+  .sub {
+    transform: translateX(-100px);
+  }
+
+  .dropdown-content.show {
+    display: flex;
+
+  }
+
+  .img-center {
+    max-width: 120px;
+    margin: 10px auto;
+  }
+
+  .image-text a {
+    font-size: 10px;
+  }
+
+  .arrow-btn {
+    padding: 5px;
+  }
+
+/* Dòng dưới: thanh tìm kiếm và icon người dùng */
+.search-wrapper {
+    flex: 75%; 
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+  }
+
+  /* Để input tìm kiếm rộng hết, button chiếm vừa phải */
+  .search-input-container {
+    flex: 1; /
+  }
+
+  .user-icon {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Ẩn các phần không cần thiết */
+  .header-user-icon-wrapper,
+  .contact,
+  .carousel-caption {
+    display: none;
+  }
+
+  .vietnam-section {
+    font-size: 0.87em;
+  }
+  .filter-btn {
+    padding: 6px 12px;
+  }
+}

@@ -1,0 +1,113 @@
+    .section-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px; /* thêm dòng này để thu hẹp margin ngoài */
+      gap: 20px;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px; 
+      border-radius: 12px;
+      box-shadow: 0 5px 6px rgba(248, 182, 182, 0.795);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section:nth-child(1) {
+      background-image: url(https://www.highlandscoffee.com.vn/vnt_upload/product/04_2018/menu-FREEZE.jpg);
+    }
+
+    .section:nth-child(2) {
+      background: linear-gradient(135deg, #e5f0e490, #ebebd6);
+      flex-direction: row-reverse;
+    }
+    .section:nth-child(3) {
+      background: linear-gradient(135deg, #e4cfcdbe, #cae4edbd);
+    }
+    .section:nth-child(4) {
+      background: linear-gradient(135deg, #f7e8d8c0, #deb3b0c4);
+      flex-direction: row-reverse;
+    }
+
+    .section img {
+      width: 300px;
+      height: auto;
+      background: none;
+      align-items: center;
+      margin: 0 20px; 
+    }
+
+
+    .text-content {
+      max-width: 600px;
+      margin: 40px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease-out;
+      transition-delay: 0.2s;
+    }
+
+    .section:nth-child(1) .text-content,
+    .section:nth-child(3) .text-content {
+      text-align: right;
+    }
+
+    .section:nth-child(2) .text-content,
+    .section:nth-child(4) .text-content {
+      text-align: left;
+    }
+
+    /* Khi hiện ra */
+    .section.visible .text-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    .text-content h2 {
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .text-content a:hover{
+      text-decoration: none;
+    }
+    .text-content p {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+    .text-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .text-content button:hover {
+      background-color: rgb(130, 165, 202);
+    }
+
+    @media (max-width: 768px) {
+    .section img {
+      display: none; /* ẩn ảnh khi màn hình nhỏ */
+    }
+
+    .text-content {
+      margin: 20px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

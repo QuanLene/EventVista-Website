@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE</title>
+    <link rel="icon" href="../images/LOGO_title.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/css_sự_kiện.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/home.css">
+  
+<!--Hiệu ứng kí hiệu thời gian, địa điểm,... Chỗ banner, sự kiện liên quan,...-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<!--hiệu ứng cho phần thông tin vé chữ + bố cục + hết vé-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- hiệu ứng cho phần thông tin vé mũi tên xoay xuống hiện thông tin-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> 
+
+  <style>
+  .ticket-form { display: none; margin-top: 20px; }
+  .payment-success { display: none; margin-top: 20px; text-align: center; }
+  .btn-payment { background-color: #90ee90; color: white; }
+  .qr-code { width: 200px; height: 200px; background-color: #f0f0f0; margin: 10px auto; }
+  </style>
+
+<style>
+  .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      width: 90%;
+      max-width: 500px; 
+      max-height: 90vh; 
+      overflow-y: auto; 
+      box-sizing: border-box;
+      border-radius: 6px;
+  }
+  .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            width: 90%;
+            max-width: 600px;
+            max-height: 400px; 
+            overflow-y: auto;
+            box-sizing: border-box;
+            border-radius: 6px;
+        }
+        .success-popup h3 {
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            font-size: 24px; 
+            text-align: center; 
+        }
+  .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+  }
+  .btn-payment {
+      background-color: #90ee90;
+      color: white;
+      border: none;
+      margin-top: 15px;
+      padding: 10px 10px;
+      cursor: pointer;
+  }
+  .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      line-height: 1;
+  }
+</style>
+
+</head>
+
+<body>
+     <div class="navbar_1">
+    <nav>
+      <div class="navbar-inner">
+        <a class="welcome-text" href="#" style="text-decoration: n;">Chào mừng bạn đến với EventVista – Nơi tìm kiếm sự kiện dễ dàng!</a>
+        <div class="contact">
+          <div class="contact-item">📞 0123 456 789</div>
+          <a class="contact-item zalo" href="https://zalo.me/g/vpdgks851" style="color: black;">Chat Zalo</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Header Section -->
+  <div class="navigation">
+    <header class="main-header">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/LOGO_main.png" alt="EventVista">
+            </a>
+        </div>
+
+        <div class="hamburger" id="hamburger">
+          <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="main-nav">
+  <a href="../index.html">TRANG CHỦ</a>
+
+  <div class="dropdown">
+    <a href="../city_sukien/city.html" class="city-link">THÀNH PHỐ</a>
+  
+      <div class="dropdown-content" id="cityMenu">
+        <div class="dropdown-region">
+          <strong>MIỀN BẮC</strong>
+          <div class="img-center">
+            <img src="../images/city/Hanoi.png" alt="Miền Bắc" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/Ha-noi.html">HA NOI</a></div>
+          </div>
+        <a href="#">Hạ Long</a>
+        <a href="#">Thái Bình</a>
+        <a href="#">Hải Phòng</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN TRUNG</strong>
+          <div class="img-center">
+            <img src="../images/city/Danang.png" alt="Miền Trung" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="#">DA NANG</a></div>
+          </div>
+        <a href="#">Nha Trang</a>
+        <a href="#">Lâm Đồng</a>
+        <a href="#">Huế</a>
+      </div>
+      <div class="dropdown-region">
+        <strong>MIỀN NAM</strong>
+          <div class="img-center">
+            <img src="../images/city/hcm.png" alt="Miền Nam" class="region-img">
+            <div class="overlay"></div>
+            <div class="image-text"><a href="../city_sukien/HCM.html">HO CHI MINH</a></div>
+          </div>
+        <a href="#">Bình Thuận</a>
+        <a href="#">Cần Thơ</a>
+        <a href="#">Phú Quốc</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="../city_sukien/sukien.html" class="city-link">SỰ KIỆN</a>
+  
+      <div class="dropdown-content sub">
+        <div class="dropdown-region">
+          <a href="../city_sukien/ca-nhac.html">🎶 Ca nhạc - Live Shows</a>
+          <a href="../city_sukien/vanhoa-nghethuat.html">🎭 Văn hóa - Nghệ thuật</a>
+          <a href="../city_sukien/workshop..html"> 🎓 Giáo dục - Workshop</a>
+          <a href="../city_sukien/thethao.html"> ⚽ Thể thao</a>
+      </div> 
+    </div>
+  </div>
+  <a href="../chinhsach/dieukhoan/HuongDanDatVe.html">ĐẶT VÉ</a>
+  <a href="../TrangLienHe.html">LIÊN HỆ</a>
+</nav>
+
+  <div class="search-wrapper">
+    <div class="search-input-container">
+      <input type="text" placeholder="Tìm kiếm...">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+  </div> 
+
+    <div class="user-dropdown">
+        <div class="user-icon" id="userIcon">
+            <i class="fa fa-user"></i>
+        </div>
+        <div class="login" id="userMenu">
+            <a href="../user/DangKy_DangNhap.html">Đăng ký</a>
+            <a href="../user/DangKy_DangNhap.html">Đăng nhập</a>
+        </div>
+    </div>
+</header>
+</div>
+  <div class="banner_sk">
+    <div class="banner-container">
+            <div class="banner-left">
+        <img src="../images/workshop/[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE/eee2272a2dcf2b322207222bfd505318.jpg" alt="Hình ảnh sự kiện" class="banner-image">
+      </div>
+      <div class="banner-right">
+        <h2 class="event-title">[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE</h2>
+  
+        <div class="event-time">
+          <i class="fa-solid fa-calendar-days icon"></i>
+          <span><strong>03 Tháng 05 Năm 2025</strong></span>
+        </div>
+  
+        <div class="event-location">
+          <i class="fa-solid fa-location-dot icon"></i>
+          <div>
+            <strong>Toà CDC</strong><br>
+            <span><em> 25 Lê Đại Hành, Hai Bà Trưng, Hà Nội, Phường Lê Đại Hành, Quận Hai Bà Trưng, Thành Phố Hà Nội</em></span>
+          </div>
+        </div>
+  
+        <div class="price-section">
+          <hr class="divider">
+             <p class="price" >Giá từ: <strong style="color: aqua;">315.000 đ </strong><i class="fa fa-chevron-right" style="font-size:medium"></i></p> 
+        </div>
+      </div>
+  
+
+    </div>
+  </div>
+  
+
+<div class="Vùng_thông_tin" id="gioiThieu">
+            <div class="featured-events-header">
+                <h2>Giới thiệu</h2>
+              </div>
+              
+              <div class="collapse-wrapper">
+                <div class="collapse-content" id="gioiThieuContent">
+        <h3 style="text-align: center;"> WORKSHOP LÀM NẾN VÀ SÁP THƠM HANDMADE </h3>
+        <div class="text-center my-4">
+        <img src="../images/workshop/[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE/workshop-lam-nen-thom.jpg" alt="Image 2" class="img-fluid"></div><BR>
+        Workshop làm Nến và Sáp thơm thủ công của Vivian Vu’s Candles là khoảng thời gian mà bạn có thể tạm gác lại những cảm xúc mệt mỏi và thả mình vào nơi hương thơm dẫn lối. 
+<BR>
+        Đến với Workshop làm Nến và Sáp thơm by Vivian Vu’s Candles bạn sẽ được:
+        <BR>
+        ⭐Thực hiện làm 2 sản phẩm NẾN và SÁP THƠM xinh xắn thủ công theo hướng dẫn.
+        <BR>
+        ⭐Sáng tạo, trang trí thành phẩm cho riêng bạn.
+        <BR>
+        ⭐Thưởng thức 1 món đồ uống do chúng mình chuẩn bị.
+        <BR>
+        ⭐Tận hưởng không gian “chill chill” tầng 11 tại Lab nến của Vivian Vu’s Candles.
+        <BR>
+         
+        
+        🕯️Ca sáng: 9:00 - 10:30
+        <BR>
+        🕯️Ca Chiều: 14:30 - 16:00
+        <BR>
+        🕯️Địa điểm: Candle Lab - Tầng 11 - CDC Building - 25 Lê Đại Hành - Hai Bà Trưng - Hà Nội
+        <BR>
+        ⏰Thời lượng: 1.5 tiếng
+        <BR>
+        📞Hotline: 0917 992 066
+        <BR>
+        Mong được gặp bạn tại Lab Nến Vivian Vu’s Candles ❤️   
+   
+          </div>
+          <button class="collapse-toggle" onclick="toggleCollapse()">Xem thêm</button>
+        </div>
+
+              </div>
+  
+
+              <div class="Vùng_thông_tin" id="ticket-info">
+                <div class="featured-events-header">
+                  <h2>THÔNG TIN VÉ</h2>
+                </div>
+              
+                <!-- NHÓM 1: 09:00 - 10:30 -->
+                <div class="accordion-item mb-3">
+                  <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+                    <span>09:00 - 10:30, 03/05/2025</span>
+                    <button class="btn btn-success btn-sm" onclick="showPopup('ticketForm', '09:00 - 10:30')">Mua vé ngay</button>
+                  </div>
+              
+                  <div class="accordion" id="group1Accordion">
+                    <!-- Vé đơn -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group1_ve1">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Vé đơn</span>
+                          <span class="ticket-price ms-auto">315.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group1_ve1" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE <br>
+                          - Làm nến và sáp thơm theo hướng dẫn<br>
+                          - Tự do sáng tạo sản phẩm<br>
+                          - Đồ uống miễn phí<br>
+                          - Không gian tầng 11 cực chill tại Vivian Vu's Candles
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Combo 2 vé -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group1_ve2">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Combo 2 vé</span>
+                          <span class="ticket-price ms-auto">599.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group1_ve2" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          Combo 2 vé giảm từ 315.000đ còn 299.500đ / vé
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Combo 3 vé -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group1_ve3">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Combo 3 vé</span>
+                          <span class="ticket-price ms-auto">850.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group1_ve3" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          Combo 3 vé giảm từ 315.000đ/vé còn 284.000đ/vé
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- NHÓM 2: 14:30 - 16:00 -->
+                <div class="accordion-item mb-3">
+                  <div class="d-flex justify-content-between align-items-center bg-dark text-white p-3 rounded-top">
+                    <span>14:30 - 16:00, 03/05/2025</span>
+                    <button class="btn btn-success btn-sm" onclick="showPopup('ticketForm', '14:30 - 16:00')">Mua vé ngay</button>
+                  </div>
+              
+                  <div class="accordion" id="group2Accordion">
+                    <!-- Vé đơn -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group2_ve1">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Vé đơn</span>
+                          <span class="ticket-price ms-auto">315.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group2_ve1" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE <br>
+                          - Làm nến và sáp thơm theo hướng dẫn<br>
+                          - Tự do sáng tạo sản phẩm<br>
+                          - Đồ uống miễn phí<br>
+                          - Không gian tầng 11 cực chill tại Vivian Vu's Candles
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Combo 2 vé -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group2_ve2">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Combo 2 vé</span>
+                          <span class="ticket-price ms-auto">599.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group2_ve2" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          Combo 2 vé giảm từ 315.000đ còn 299.500đ / vé
+                        </div>
+                      </div>
+                    </div>
+              
+                    <!-- Combo 3 vé -->
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed custom-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#group2_ve3">
+                          <i class="fa fa-angle-right icon-left me-2"></i>
+                          <span class="tên_vé">Combo 3 vé</span>
+                          <span class="ticket-price ms-auto">850.000 đ</span>
+                        </button>
+                      </h2>
+                      <div id="group2_ve3" class="accordion-collapse collapse">
+                        <div class="accordion-body">
+                          Combo 3 vé giảm từ 315.000đ/vé còn 284.000đ/vé
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                       
+<div class="Vùng_thông_tin">
+  <div class="featured-events-header">
+    <h2>BAN TỔ CHỨC</h2>
+  </div>
+  <div>
+    <div style="display: flex; align-items: center;">
+      <img src="../images/workshop/[VIVIAN VU’S CANDLES] WORKSHOP LÀM NẾN THƠM VÀ SÁP THƠM HANDMADE/D29AF2.jpg" alt="VieON x VieChannel" style="width: 150px; height: auto; margin-right: 30px;">
+      <div>
+        <p style="margin-top: 0; margin-bottom: 5px; font-weight: bold; color: #333;">Vivian Vu’s Candles</p>
+        <p style="margin-top: 0; margin-bottom: 5px; color: #777; font-size: 0.9em;">Hotline: 0917 992 066 ;Showroom: CDC Building - 25 Lê Đại Hành - Hai Bà Trưng - Hà Nội</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="Vùng_thông_tin">
+  <div class="featured-events-header">
+    <h2>Sự kiện liên quan</h2>
+
+  </div>
+<div class="featured-events">
+    <div class="events-grid">
+      <div class="event-card">
+        <a href="../chitiet_su_kien/[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN.html">
+          <div class="event-image">
+            <img src="../images/workshop/[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN/ảnh 1.png" alt=" ">
+            <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+          </div>
+          <div class="event-details">
+            <h3>[NEW][FLOWER 1969’s] MOSS FRAME WORKSHOP - BỨC TRANH THIÊN NHIÊN</h3>
+            <p class="event-price">Từ 315.000đ</p>
+            <p class="event-date"><i class="fa fa-calendar-alt"></i> 10 Tháng 05, 2025</p>
+          </div>
+        </a>
+      </div>
+    
+  <div class="event-card">
+    <a href="../chitiet_su_kien/ART WORKSHOP UJI MATCHA CHEESECAKE TARTE.html">
+      <div class="event-image">
+        <img src="../images/workshop/ART WORKSHOP  UJI MATCHA CHEESECAKE TARTE/ảnh1.jpg" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>ART WORKSHOP " UJI MATCHA CHEESECAKE TARTE"</h3>
+        <p class="event-price">Từ 420.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 02 Tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="event-card">
+    <a href="../chitiet_su_kien/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM.html">
+      <div class="event-image">
+        <img src="../images/workshop/[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM/ảnh1.png" alt=" ">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>[FLOWER 1969’s] WORKSHOP CANDLE - HỌC LÀM NẾN THƠM</h3>
+        <p class="event-price">Từ 279.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 03 tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="event-card">
+    <a href="../chitiet_su_kien/[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG.html">
+      <div class="event-image">
+        <img src="../images/workshop/[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG/ảnh 1.png" alt="">
+        <div class="event-location-overlay"><i class="fa fa-map-marker-alt"></i> Hồ Chí Minh</div>
+      </div>
+      <div class="event-details">
+        <h3>[FLOWER 1969’s] SOAP WORKSHOP - HỌC LÀM XÀ PHÒNG</h3>
+        <p class="event-price">Từ 279.000đ</p>
+        <p class="event-date"><i class="fa fa-calendar-alt"></i> 10 tháng 05, 2025</p>
+      </div>
+    </a>
+  </div>
+
+    </div>
+</div>
+</div>
+
+<!-- Form đặt vé -->
+<div id="ticketForm" class="popup" style="background-color: #ede5d0;">
+    <img src="../images/LOGO_main.png" alt="EventVista" style="display: block; margin: 0 auto; width: 150px;">
+  <span class="close-btn" onclick="hidePopup()">X</span>
+  <h3>Đặt Vé</h3>
+  <form id="bookingForm">
+      <div class="mb-3">
+          <label for="fullName" class="form-label"><em>Họ và tên </em><span style="color:red;">*</span></label>
+          <input type="text" class="form-control" id="fullName" required>
+      </div>
+      <div class="mb-3">
+          <label for="phone" class="form-label"><em>Số điện thoại</em> <span style="color:red;">*</span></label>
+          <input type="tel" class="form-control" id="phone" required>
+      </div>
+      <div class="mb-3">
+          <label for="email" class="form-label"><em>Email</em> <span style="color:red;">*</span></label>
+          <input type="email" class="form-control" id="buyEmail" required>
+      </div>
+      <div class="mb-3">
+          <label for="note" class="form-label"><em>Ghi chú</em></label>
+          <textarea class="form-control" id="note"></textarea>
+      </div>
+      <div class="mb-3">
+          <label><em>Thời gian:</em> <span id="displayEventTime">03 Tháng 05 Năm 2025</span></label>
+      </div>
+      <div class="mb-3">
+          <label><em>Địa điểm:</em> Toà CDC, 25 Lê Đại Hành, Hai Bà Trưng, Hà Nội, Phường Lê Đại Hành, Quận Hai Bà Trưng, Thành Phố Hà Nội</label>
+      </div>
+      <div class="mb-3">
+          <label><em>Chọn giờ:</em></label><br>
+          <input type="radio" name="timeSlot" value="09:00 - 10:30" required> 09:00 - 10:30<br>
+          <input type="radio" name="timeSlot" value="14:30 - 16:00"> 14:30 - 16:00
+      </div>
+      <div class="mb-3">
+          <label><em>Loại vé:</em></label><br>
+          <input type="radio" name="ticketType" value="regular" required> Vé đơn: 315.000 đ<br>
+          <input type="radio" name="ticketType" value="combo2"> Combo 2 vé: 599.000 đ<br>
+          <input type="radio" name="ticketType" value="combo3"> Combo 3 vé: 850.000 đ
+      </div>
+      <div>
+          <label><em>Phương thức thanh toán:</em></label><br>
+          <input type="radio" name="paymentMethod" value="vnpay" required> VNPAY/Mobile Banking App<br>
+          <input type="radio" name="paymentMethod" value="vietqr"> VietQR<br>
+          <input type="radio" name="paymentMethod" value="momo"> Momo<br>
+          <input type="radio" name="paymentMethod" value="zalopay"> Zalopay
+      </div>
+      <button type="button" class="btn btn-payment" onclick="processPayment()">Thanh Toán</button>
+  </form>
+</div>
+
+<!-- Form thành công -->
+<div id="paymentSuccess" class="popup" style="background-color: #ede5d0;">
+  <span class="close-btn" onclick="hidePopup()">X</span>
+  <h3>THỰC HIỆN THANH TOÁN</h3>
+  <p>Thông tin về vé sẽ được gửi qua Email của bạn</p>
+  <p>Quét mã qua ứng dụng Ngân hàng/ Ví điện tử</p>
+  <img src="../images/1.jpg" alt="QR Code" class="qr-code" id="qrCode" style="display: block; margin: 0 auto; width: 200px; height: 200px;"> <br> 
+  <p><em>Thông tin đơn hàng:</em> Giá trị đơn hàng là <span id="orderAmount"></span></p>
+  <button class="btn btn-secondary" onclick="hidePopup()">Close</button>
+</div>
+
+
+<!-- Popup Form Thành công sau 10 giây -->
+        <div id="finalSuccess" class="success-popup" style="background-color: #ede5d0;">
+            <span class="close-btn" onclick="hidePopup()">X</span>
+            <h3 style="display: block; margin: 0 auto;"><em>BẠN ĐÃ THANH TOÁN THÀNH CÔNG!</em></h3>
+        </div>
+<div id="overlay" class="overlay" onclick="hidePopup()"></div>
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- Cột 1: Thông tin liên hệ -->
+    <div class="footer-column">
+      <p><strong>Hotline</strong><br>📞 Thứ 2 - Chủ Nhật (8:30 - 23:00)<br>
+        <span class="hotline-number">0123.456.789</span>
+      </p>
+      <p><strong>Email</strong><br>📧 supportEventvista@eventvista.vn</p>
+      <p><strong>Văn phòng</strong><br>
+        📍 Số 12 Học viện Ngân Hàng, Đống Đa, Hà Nội
+      </p>
+    </div>
+
+    <!-- Cột 2: Dành cho khách + tổ chức + đăng ký email -->
+     <div class="footer-column">
+      <p><strong>Dành cho Khách hàng</strong></p>
+      <a href="../chinhsach/KhachHang.html">Điều khoản sử dụng cho khách hàng</a>
+
+      <p><strong>Dành cho Ban Tổ chức</strong></p>
+      <a href="../chinhsach/ToChuc.html">Điều khoản sử dụng cho ban tổ chức</a>
+
+      <p><strong>Đăng ký nhận email về các sự kiện hot nhất</strong></p>
+      <div class="email-subscribe">
+        <span class="email-icon">✅</span>
+        <input type="email" id="emailInput" placeholder="Your Email">
+        <button class="send-btn" onclick="checkEmail()">➤</button>
+      </div>
+      <p id="errorMsg" style="color: rgb(239, 85, 85); display: none;">Vui lòng nhập email</p>
+    </div>
+
+    <!-- Cột 3: Chính sách -->
+    <div class="footer-column">
+      <p><strong>Về chúng tôi</strong></p>
+      <p><a href="../chinhsach/dieukhoan/QuyCheHoatDong.html">Quy chế hoạt động</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH BẢO MẬT THÔNG TIN CÁ NHÂN CỦA NGƯỜI TIÊU DÙNG.html">Chính sách bảo mật thông tin</a></p>
+      <p><a href="../chinhsach/dieukhoan/CoCheGiaiQuyetTranhChap.html">Cơ chế giải quyết tranh chấp/ khiếu nại</a></p>
+      <p><a href="../chinhsach/dieukhoan/BaoMatThanhToan.html">Chính sách bảo mật thanh toán</a></p>
+      <p><a href="../chinhsach/dieukhoan/CHÍNH SÁCH KIỂM HÀNG, ĐỔI TRẢ. HOÀN TIỀN VÀ BẢO HÀNH.html">Chính sách đổi trả và kiểm hàng</a></p>
+      <p><a href="../chinhsach/dieukhoan/DieuKienVanChuyen.html">Điều kiện vận chuyển và giao nhận</a></p>
+      <p><a href="../chinhsach/dieukhoan/PHƯƠNG-THỨC-THANH-TOÁN.html">Phương thức thanh toán</a></p>
+    </div>
+  </div>
+</footer>
+
+
+
+<script>
+    function toggleCollapse() {
+      const wrapper = document.querySelector('.collapse-wrapper');
+      wrapper.classList.toggle('expanded');
+    const isExpanded = wrapper.classList.contains('expanded');
+      const button = wrapper.querySelector('.collapse-toggle');
+      
+      button.textContent = wrapper.classList.contains('expanded') ? "Thu gọn" : "Xem thêm";
+      
+
+  if (!isExpanded) {
+      const section = document.getElementById("gioiThieu");
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    }
+    </script>
+
+<script>
+function toggleAll() {
+  const btn = document.getElementById("toggleAllBtn");
+  const allCollapses = document.querySelectorAll('.accordion-collapse');
+  const anyHidden = [...allCollapses].some(el => !el.classList.contains('show'));
+
+  allCollapses.forEach(el => {
+    const instance = bootstrap.Collapse.getOrCreateInstance(el);
+    anyHidden ? instance.show() : instance.hide();
+  });
+
+  btn.textContent = anyHidden ? "Thu gọn" : "Xem tất cả";
+}
+</script>
+<!--Khi nhấn vào GIÁ TỪ... Máy cuộn xuống Thông tin vé-->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const priceElement = document.querySelector(".price");
+    const ticketInfoSection = document.getElementById("ticket-info");
+
+    if (priceElement && ticketInfoSection) {
+      priceElement.style.cursor = "pointer"; 
+      priceElement.addEventListener("click", function () {
+        ticketInfoSection.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
+</script>
+
+    
+    <script>
+      function showPopup(formId) {
+          document.getElementById('overlay').style.display = 'block';
+          document.getElementById('ticketForm').style.display = 'none';
+          document.getElementById('paymentSuccess').style.display = 'none';
+          document.getElementById(formId).style.display = 'block';
+      
+          if (formId === 'paymentSuccess') {           
+              const ticketType = document.querySelector('input[name="ticketType"]:checked')?.value || 'regular';
+              const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';
+              document.getElementById('orderAmount').textContent = orderAmount;
+      } 
+    }
+
+      function hidePopup() {
+          document.getElementById('overlay').style.display = 'none';
+          document.getElementById('ticketForm').style.display = 'none';
+          document.getElementById('paymentSuccess').style.display = 'none';
+          document.getElementById('finalSuccess').style.display = 'none';
+          document.getElementById('bookingForm')?.reset();
+      }
+
+      function processPayment() {
+            const fullName = document.getElementById('fullName').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const buyEmail = document.getElementById('buyEmail').value.trim();
+            const timeSlot = document.querySelector('input[name="timeSlot"]:checked')?.value; 
+            if (fullName === '') {
+                alert('Họ và tên không được để trống');
+                return;
+            }
+            if (phone === '') {
+                alert('Số điện thoại không được để trống');
+                return;
+            }
+            if (buyEmail === '') {
+                alert('Email không được để trống');
+                return;
+            }
+            if (!isValidEmail(buyEmail)) {
+                alert('Email không đúng định dạng');
+                return;
+            }
+            if (!timeSlot) {
+                alert('Vui lòng chọn thời gian');
+                return;
+            }
+            if (!document.querySelector('input[name="ticketType"]:checked')) {
+                alert('Vui lòng chọn loại vé');
+                return;
+            }
+            if (!document.querySelector('input[name="paymentMethod"]:checked')) {
+                alert('Vui lòng chọn phương thức thanh toán');
+                return;
+            }  
+            const ticketType = document.querySelector('input[name="ticketType"]:checked').value;
+            const orderAmount = ticketType === 'regular' ? '315.000 đ' : ticketType === 'combo2' ? '599.000 đ' : '850.000 đ';             
+            document.getElementById('orderAmount').textContent = orderAmount;
+            document.getElementById('ticketForm').style.display = 'none';
+            showPopup('paymentSuccess');
+            //document.getElementById('paymentSuccess').style.display = 'block'; 
+
+                setTimeout(() => {
+                  document.getElementById('paymentSuccess').style.display = 'none';  
+                  document.getElementById('finalSuccess').style.display = 'block';
+                }, 10000);
+            
+              }
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }      
+
+        function exitForm() {
+            document.getElementById('paymentSuccess').style.display = 'none';
+            document.getElementById('ticketForm').style.display = 'none';
+            document.getElementById('bookingForm').reset();
+        }
+  </script>
+
+<!-- Nút Zalo với chữ -->
+<a id="zaloBtn" href="https://zalo.me/g/vpdgks851" target="_blank" title="Liên hệ Zalo">
+  Zalo
+</a>
+
+<!-- Nút lên đầu trang -->
+<button id="backToTopBtn" title="Lên đầu trang">
+  <i class="fas fa-home"></i>
+</button>
+
+
+<script src="../js/learn.js"></script>
+</body>
+</html>
