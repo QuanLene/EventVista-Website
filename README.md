@@ -1,8 +1,5 @@
 # 🎯 Đề tài: Thiết kế website tìm hiểu sự kiện
 
-**Lớp học phần:** Thiết kế web - Thứ 3 ca 4  
-
-
 ---
 
 ## 🌐 Giới thiệu dự án
