@@ -2,14 +2,6 @@
 
 **Lớp học phần:** Thiết kế web - Thứ 3 ca 4  
 
-## 👥 Thành viên nhóm
-
-| STT | Họ và tên             | Mã sinh viên  |
-|-----|-----------------------|---------------|
-| 1   | Nguyễn Trịnh Hải Linh | 26A4041704    |
-| 2   | Đinh Thị Quỳnh Anh    | 26A4041204    |
-| 3   | Vũ Phương Anh         | 26A4041213    |
-| 4   | Lê Hải Quân           | 25A4042219    |
 
 ---
 
@@ -61,8 +53,4 @@
 
 ---
 
-## ✉️ Liên hệ
 
-📧 Email: support@eventvista.vn  
-📍 Địa chỉ: Banking Academy - Khoa CNTT & Kinh tế số  
-📞 Hotline: 0123 456 789  
